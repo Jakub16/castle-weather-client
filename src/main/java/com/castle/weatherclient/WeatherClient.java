@@ -4,7 +4,6 @@ import com.castle.weatherclient.contract.WeatherDto;
 import com.castle.weatherclient.contract.WeatherSummaryDto;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.UriComponentsBuilder;
 
 @Component
 public class WeatherClient implements IWeatherClient{
@@ -27,7 +26,7 @@ public class WeatherClient implements IWeatherClient{
         this.weatherClientSettings = weatherClientSettings;
     }
     @Override
-    public WeatherDto getWeatherByUnixTime(Long unixTime) {
+    public WeatherDto getCurrentWeather() {
         var uri = weatherClientSettings.getUriComponentsBuilder()
                 .queryParam("lat", latitude)
                 .queryParam("lon", longitude)
@@ -40,7 +39,7 @@ public class WeatherClient implements IWeatherClient{
     }
 
     @Override
-    public WeatherSummaryDto getWeatherSummaryByUnixTime(Long unixTime) {
+    public WeatherSummaryDto getCurrentWeatherSummary() {
         var uri = weatherClientSettings.getUriComponentsBuilder()
                 .queryParam("lat", latitude)
                 .queryParam("lon", longitude)

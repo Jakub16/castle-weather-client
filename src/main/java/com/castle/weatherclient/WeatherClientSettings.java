@@ -1,7 +1,5 @@
 package com.castle.weatherclient;
 
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -15,9 +13,9 @@ public class WeatherClientSettings implements IWeatherClientSettings {
     @Value("3")
     private String apiVersion;
 
-    @Value("54,295412")
+    @Value("${LOCATION_LATITUDE}")
     private float latitude;
-    @Value("18,537523")
+    @Value("${LOCATION_LONGITUDE}")
     private float longitude;
 
     @Override
