@@ -22,8 +22,4 @@ public class WeatherDto extends WeatherSummaryDto {
     private int cloudiness;
     @JsonProperty("current.wind_speed")
     private float windSpeed;
-    @JsonProperty("current.weather.main")
-    private String weatherType;
-    @JsonProperty("current.weather.description")
-    private String weatherDescription;
 }

@@ -27,7 +27,7 @@ class WeatherClientTests {
     void setUp() {
         WeatherDto weatherDtoInstance;
 
-        Mockito.when(weatherClient.getWeatherByUnixTime(1785L)).thenReturn(weatherDto);
+        Mockito.when(weatherClient.getCurrentWeather()).thenReturn(weatherDto);
     }
 
     @Test

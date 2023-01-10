@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Setter
 public class WeatherSummaryDto {
@@ -16,7 +19,6 @@ public class WeatherSummaryDto {
     private long unixTime;
     @JsonProperty("current.temp")
     private float temperature;
-    @JsonProperty("current.weather.icon")
-    private String weatherIconId;
-
+    @JsonProperty("current.weather")
+    private List<WeatherDescriptionDto> weatherDescription = new ArrayList<WeatherDescriptionDto>();
 }

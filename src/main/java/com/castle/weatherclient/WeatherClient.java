@@ -1,9 +1,13 @@
 package com.castle.weatherclient;
 
+import com.castle.weatherclient.contract.DailyWeatherDto;
+import com.castle.weatherclient.contract.HourlyWeatherDto;
 import com.castle.weatherclient.contract.WeatherDto;
 import com.castle.weatherclient.contract.WeatherSummaryDto;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.List;
 
 @Component
 public class WeatherClient implements IWeatherClient{
@@ -50,4 +54,32 @@ public class WeatherClient implements IWeatherClient{
 
         return restTemplate.getForObject(uri, WeatherSummaryDto.class);
     }
+
+    @Override
+    public HourlyWeatherDto getHourlyWeather() {
+        var uri = weatherClientSettings.getUriComponentsBuilder()
+                .queryParam("lat", latitude)
+                .queryParam("lon", longitude)
+                .queryParam("exclude", "current,minutely,daily,alerts")
+                .queryParam("appid", apiKey)
+                .build()
+                .toUriString();
+
+        return restTemplate.getForObject(uri, HourlyWeatherDto.class);
+    }
+
+    @Override
+    public DailyWeatherDto getDailyWeather() {
+        var uri = weatherClientSettings.getUriComponentsBuilder()
+                .queryParam("lat", latitude)
+                .queryParam("lon", longitude)
+                .queryParam("exclude", "current,hourly,minutely,alerts")
+                .queryParam("appid", apiKey)
+                .build()
+                .toUriString();
+
+        return restTemplate.getForObject(uri, DailyWeatherDto.class);
+    }
+
+
 }
