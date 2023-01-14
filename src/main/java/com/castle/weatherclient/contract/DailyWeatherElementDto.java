@@ -3,7 +3,6 @@ package com.castle.weatherclient.contract;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.lang.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +16,6 @@ public class DailyWeatherElementDto {
     private long sunrise;
     @JsonProperty("sunset")
     private long sunset;
-    //monnrise & moonset?
     @JsonProperty("temp.day")
     private float dayTemperature;
     @JsonProperty("temp.min")
@@ -51,7 +49,6 @@ public class DailyWeatherElementDto {
     @JsonProperty("pop")
     private float probabilityOfPrecipitation;
     @JsonProperty("rain.1h")
-    @Nullable //?
     private float rainAmount;
     private float uvi;
 

@@ -7,7 +7,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class WeatherDescriptionDto {
-    private int id;
     @JsonProperty("main")
     private String mainDescription;
     private String description;

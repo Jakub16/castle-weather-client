@@ -16,5 +16,6 @@ public interface IWeatherClientSettings {
                 .pathSegment("data")
                 .pathSegment(getApiVersion())
                 .path("onecall");
+
     }
 }

@@ -32,6 +32,5 @@ public class HourlyWeatherElementDto {
     @JsonProperty("pop")
     private float probabilityOfPrecipitation;
     @JsonProperty("rain.1h")
-    @Nullable //?
     private float rainAmount;
 }

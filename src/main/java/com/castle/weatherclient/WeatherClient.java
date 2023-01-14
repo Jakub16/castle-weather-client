@@ -3,11 +3,8 @@ package com.castle.weatherclient;
 import com.castle.weatherclient.contract.DailyWeatherDto;
 import com.castle.weatherclient.contract.HourlyWeatherDto;
 import com.castle.weatherclient.contract.WeatherDto;
-import com.castle.weatherclient.contract.WeatherSummaryDto;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
-
-import java.util.List;
 
 @Component
 public class WeatherClient implements IWeatherClient{
@@ -35,24 +32,11 @@ public class WeatherClient implements IWeatherClient{
                 .queryParam("lat", latitude)
                 .queryParam("lon", longitude)
                 .queryParam("exclude", "minutely,hourly,daily,alerts")
-                .queryParam("appid", apiKey)
+                .pathSegment(apiKey + "kk")
                 .build()
                 .toUriString();
 
         return restTemplate.getForObject(uri, WeatherDto.class);
-    }
-
-    @Override
-    public WeatherSummaryDto getCurrentWeatherSummary() {
-        var uri = weatherClientSettings.getUriComponentsBuilder()
-                .queryParam("lat", latitude)
-                .queryParam("lon", longitude)
-                .queryParam("exclude", "minutely,hourly,daily,alerts")
-                .queryParam("appid", apiKey)
-                .build()
-                .toUriString();
-
-        return restTemplate.getForObject(uri, WeatherSummaryDto.class);
     }
 
     @Override
