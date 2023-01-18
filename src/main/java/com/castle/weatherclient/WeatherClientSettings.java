@@ -1,43 +1,22 @@
 package com.castle.weatherclient;
 
+import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+@Getter
 @Component
 public class WeatherClientSettings implements IWeatherClientSettings {
 
-    @Value("https://api.openweathermap.org/")
+    @Value("${openweathermap.base.url}")
     private String baseUrl;
-    @Value("${OPENWEATHERMAP_API_KEY}")
+    @Value("${openweathermap.api.key}")
     private String apiKey;
-    @Value("3")
+    @Value("3.0")
     private String apiVersion;
 
-    @Value("${LOCATION_LATITUDE}")
-    private float latitude;
-    @Value("${LOCATION_LONGITUDE}")
-    private float longitude;
-
-    @Override
-    public String getBaseUrl() {
-        return baseUrl;
-    }
-
-    @Override
-    public String getApiVersion() {
-        return apiVersion;
-    }
-
-    @Override
-    public String getApiKey() {
-        return apiKey;
-    }
-
-    public float getLatitude() {
-        return latitude;
-    }
-
-    public float getLongitude() {
-        return longitude;
-    }
+    @Value("${openweathermap.location.latitude}")
+    private String latitude;
+    @Value("${openweathermap.location.longitude}")
+    private String longitude;
 }

@@ -6,8 +6,8 @@ public interface IWeatherClientSettings {
     String getBaseUrl();
     String getApiVersion();
     String getApiKey();
-    float getLatitude();
-    float getLongitude();
+    String getLatitude();
+    String getLongitude();
 
     default UriComponentsBuilder getUriComponentsBuilder() {
         return UriComponentsBuilder.newInstance()

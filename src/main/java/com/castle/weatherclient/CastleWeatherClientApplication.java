@@ -1,13 +1,11 @@
 package com.castle.weatherclient;
 
-import com.castle.weatherclient.contract.WeatherDto;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-public class CastleWeatherClientApplication {
+public class CastleWeatherClientApplication implements CommandLineRunner{
     private static IWeatherClient weatherClient;
 
     public CastleWeatherClientApplication(IWeatherClient weatherClient) {
@@ -18,10 +16,10 @@ public class CastleWeatherClientApplication {
         SpringApplication.run(CastleWeatherClientApplication.class, args);
     }
 
-//    @Override
-//    public void run(String... args) throws Exception {
-//        var weatherDto = weatherClient.getCurrentWeather();
-//        int cloudiness = weatherDto.getCloudiness();
-//    }
+    @Override
+    public void run(String... args) throws Exception {
+        var weatherDto = weatherClient.getCurrentWeather();
+        int cloudiness = weatherDto.getCurrentWeatherDto().getCloudiness();
+    }
 
 }

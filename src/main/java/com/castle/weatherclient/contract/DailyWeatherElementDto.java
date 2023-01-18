@@ -16,26 +16,10 @@ public class DailyWeatherElementDto {
     private long sunrise;
     @JsonProperty("sunset")
     private long sunset;
-    @JsonProperty("temp.day")
-    private float dayTemperature;
-    @JsonProperty("temp.min")
-    private float minTemperature;
-    @JsonProperty("temp.max")
-    private float maxTemperature;
-    @JsonProperty("temp.night")
-    private float nightTemperature;
-    @JsonProperty("temp.eve")
-    private float eveningTemperature;
-    @JsonProperty("temp.morn")
-    private float morningTemperature;
-    @JsonProperty("feels_like.day")
-    private float dayPerceivedTemperature;
-    @JsonProperty("feels_like.night")
-    private float nightPerceivedTemperature;
-    @JsonProperty("feels_like.eve")
-    private float eveningPerceivedTemperature;
-    @JsonProperty("feels_like.morn")
-    private float morningPerceivedTemperature;
+    @JsonProperty("temp")
+    private DailyTemperatureDto dailyTemperatureDto;
+    @JsonProperty("feels_like")
+    private DailyFeelsLikeDto dailyFeelsLikeDto;
     @JsonProperty("pressure")
     private int pressure;
     @JsonProperty("humidity")
@@ -48,7 +32,7 @@ public class DailyWeatherElementDto {
     private int cloudiness;
     @JsonProperty("pop")
     private float probabilityOfPrecipitation;
-    @JsonProperty("rain.1h")
+    @JsonProperty("rain")
     private float rainAmount;
     private float uvi;
 

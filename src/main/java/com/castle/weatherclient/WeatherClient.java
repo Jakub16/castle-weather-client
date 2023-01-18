@@ -13,8 +13,8 @@ public class WeatherClient implements IWeatherClient{
     private final String baseUrl;
     private final String apiVersion;
     private final String apiKey;
-    private final float latitude;
-    private final float longitude;
+    private final String latitude;
+    private final String longitude;
     private final IWeatherClientSettings weatherClientSettings;
 
     public WeatherClient(IWeatherClientSettings weatherClientSettings) {
@@ -32,7 +32,8 @@ public class WeatherClient implements IWeatherClient{
                 .queryParam("lat", latitude)
                 .queryParam("lon", longitude)
                 .queryParam("exclude", "minutely,hourly,daily,alerts")
-                .pathSegment(apiKey + "kk")
+                .queryParam("appid", apiKey)
+                .queryParam("units", "metric")
                 .build()
                 .toUriString();
 
@@ -46,6 +47,7 @@ public class WeatherClient implements IWeatherClient{
                 .queryParam("lon", longitude)
                 .queryParam("exclude", "current,minutely,daily,alerts")
                 .queryParam("appid", apiKey)
+                .queryParam("units", "metric")
                 .build()
                 .toUriString();
 
@@ -59,6 +61,7 @@ public class WeatherClient implements IWeatherClient{
                 .queryParam("lon", longitude)
                 .queryParam("exclude", "current,hourly,minutely,alerts")
                 .queryParam("appid", apiKey)
+                .queryParam("units", "metric")
                 .build()
                 .toUriString();
 
