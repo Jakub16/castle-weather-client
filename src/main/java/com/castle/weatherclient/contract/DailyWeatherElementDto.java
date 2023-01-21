@@ -35,6 +35,4 @@ public class DailyWeatherElementDto {
     @JsonProperty("rain")
     private float rainAmount;
     private float uvi;
-
-
 }

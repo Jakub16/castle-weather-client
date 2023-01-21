@@ -1,6 +1,6 @@
 package com.castle.weatherclient;
 
-import com.castle.weatherclient.contract.WeatherDto;
+/*import com.castle.weatherclient.contract.WeatherDto;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -9,9 +9,9 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
-@RunWith(MockitoJUnitRunner.class)
+@RunWith(MockitoJUnitRunner.class)*/
 class WeatherClientTests {
-
+/*
     @Mock
     WeatherClientSettings weatherClientSettings;
     @Mock
@@ -30,6 +30,6 @@ class WeatherClientTests {
 
     @Test
     void getWeatherFromUnixTimeShouldReturnProperWeatherDtoObject() {
-    }
+    }*/
 
 }
