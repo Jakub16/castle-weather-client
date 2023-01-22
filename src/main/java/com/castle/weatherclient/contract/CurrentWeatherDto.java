@@ -24,5 +24,5 @@ public class CurrentWeatherDto {
     private int cloudiness;
     private float windSpeed;
     @JsonProperty("weather")
-    private List<WeatherDescriptionDto> weatherDescription = new ArrayList<WeatherDescriptionDto>();
+    private List<WeatherDescriptionDto> weatherDescriptionDto = new ArrayList<WeatherDescriptionDto>();
 }

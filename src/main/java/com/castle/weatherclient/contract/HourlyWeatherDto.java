@@ -12,5 +12,5 @@ import java.util.List;
 @Setter
 public class HourlyWeatherDto {
     @JsonProperty("hourly")
-    private List<HourlyWeatherElementDto> hourlyWeatherElements = new ArrayList<HourlyWeatherElementDto>();
+    private List<HourlyWeatherElementDto> hourlyWeatherElementDtos = new ArrayList<HourlyWeatherElementDto>();
 }
