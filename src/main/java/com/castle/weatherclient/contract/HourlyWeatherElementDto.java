@@ -28,7 +28,7 @@ public class HourlyWeatherElementDto {
     @JsonProperty("wind_speed")
     private float windSpeed;
     @JsonProperty("weather")
-    private List<WeatherDescriptionDto> weatherDescription = new ArrayList<WeatherDescriptionDto>();
+    private List<WeatherDescriptionDto> weatherDescriptionDtos = new ArrayList<WeatherDescriptionDto>();
     @JsonProperty("pop")
     private float probabilityOfPrecipitation;
     @JsonProperty("rain")
