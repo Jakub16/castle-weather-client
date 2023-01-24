@@ -12,5 +12,5 @@ import java.util.List;
 public class DailyWeatherDto {
 
     @JsonProperty("daily")
-    private List<DailyWeatherElementDto> dailyWeatherElements = new ArrayList<DailyWeatherElementDto>();
+    private List<DailyWeatherElementDto> dailyWeatherElementsDto = new ArrayList<DailyWeatherElementDto>();
 }
