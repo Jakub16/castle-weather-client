@@ -34,6 +34,7 @@ public class WeatherClient implements IWeatherClient{
                 .queryParam("exclude", "minutely,hourly,daily,alerts")
                 .queryParam("appid", apiKey)
                 .queryParam("units", "metric")
+                .queryParam("lang", "pl")
                 .build()
                 .toUriString();
 
@@ -48,6 +49,7 @@ public class WeatherClient implements IWeatherClient{
                 .queryParam("exclude", "current,minutely,daily,alerts")
                 .queryParam("appid", apiKey)
                 .queryParam("units", "metric")
+                .queryParam("lang", "pl")
                 .build()
                 .toUriString();
 
@@ -62,6 +64,7 @@ public class WeatherClient implements IWeatherClient{
                 .queryParam("exclude", "current,hourly,minutely,alerts")
                 .queryParam("appid", apiKey)
                 .queryParam("units", "metric")
+                .queryParam("lang", "pl")
                 .build()
                 .toUriString();
 
